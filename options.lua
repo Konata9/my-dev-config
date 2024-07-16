@@ -6,6 +6,11 @@ vim.g.autoformat = false
 local opt = vim.opt
 opt.wrap = true
 
+-- Show title
+opt.title = true
+opt.titlelen = 0 -- do not shorten title
+opt.titlestring = 'nvim %{expand("%:p")}'
+
 if vim.g.neovide then
 	vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
 	vim.keymap.set("v", "<D-c>", '"+y') -- Copy
