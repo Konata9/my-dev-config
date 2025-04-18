@@ -4,11 +4,10 @@ vim.g.maplocalleader = " "
 
 local map = vim.api.nvim_set_keymap
 
--- Split windows
-map("n", "<leader>|", ":vsp<CR>", { desc = "Vertical split Window", noremap = true})
-map("n", "<leader>-", ":sp<CR>", { desc = "Horizion split Window", noremap = true})
-map("n", "<leader>wc", "<C-w>c", {desc = "Close current Window", noremap = true})
-map("n", "<leader>wo", "<C-w>o", {desc = "Close other Windows", noremap = true})
+-- windows
+map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", noremap = true })
+map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", noremap = true })
+map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", noremap = true })
 
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", noremap= true })
