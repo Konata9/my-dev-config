@@ -6,3 +6,4 @@ require("keybindings")
 
 -- Lazy.nvim
 require("config.lazy")
+
