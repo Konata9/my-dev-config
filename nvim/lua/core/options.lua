@@ -76,3 +76,5 @@ vim.o.pumheight = 10
 vim.o.showtabline = 2
 -- Hide mode text (shown in statusline plugin)
 vim.o.showmode = false
+-- Share clipboard
+vim.o.clipboard = "unnamedplus"

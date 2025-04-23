@@ -1,9 +1,4 @@
--- Basic
-require("config.basic")
+require('core.options')
+require('core.keybindings')
 
--- Keybinding
-require("config.keybindings")
-
--- Lazy.nvim
-require("config.lazy")
-
+require('config.lazy')
