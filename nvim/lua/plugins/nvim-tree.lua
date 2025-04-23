@@ -22,6 +22,28 @@ return {
           vim.keymap.set("n", "o", api.node.open.edit, opts)
           vim.keymap.set("n", "h", api.node.navigate.parent_close, opts)
           vim.keymap.set("n", "s", api.node.open.vertical, opts)
+
+          vim.keymap.set("n", "a", function()
+            local node = api.tree.get_node_under_cursor()
+            if not node then return end  -- 防止空节点
+
+            -- Find parent path 
+            local parent_dir = node.type == "directory" 
+                and (node.absolute_path .. "/")
+                or (vim.fn.fnamemodify(node.absolute_path, ":h") .. "/")
+
+            -- New file name
+            local new_file = vim.fn.input("New file: ", parent_dir)
+            if new_file ~= "" then
+                vim.cmd("edit " .. new_file)
+                vim.cmd("write")  
+
+                api.tree.reload()            
+            end
+          end, opts)
+
+          vim.keymap.set("n", "r", api.fs.rename, opts) 
+          vim.keymap.set("n", "d", api.fs.remove, opts)
         end
 
         require("nvim-tree").setup({
