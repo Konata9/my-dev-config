@@ -41,20 +41,6 @@ return {
         options = {
           toggle_hidden_on_enter = true,
         },
-        items = {
-          { -- Group by files 
-            name = "Files",
-            matcher = function(buf) 
-              return buf.path:match("%.lua$")
-            end,
-          },
-          { -- Group by git
-            name = "Git",
-            matcher = function(buf)
-              return vim.b[buf.id].git_status
-            end,
-          },
-        },
       },
       custom_areas = { 
         right = function()
