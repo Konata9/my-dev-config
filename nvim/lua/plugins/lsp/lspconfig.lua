@@ -1,9 +1,9 @@
 return  {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
+    lazy = true,
     config = function()
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
-      local util = require("lspconfig/util")
 
       local on_attach = function(client, bufnr)
         -- General setting
@@ -38,32 +38,10 @@ return  {
         end
       end
 
-    local ft_to_lsp = {
-      javascript = { "ts_ls" },
-      typescript = { "ts_ls" },
-      markdown = { "marksman" },
-      go = { "gopls" },
-      sh = { "bashls" },
-      yaml = { "yamlls" },
-      json = { "jsonls" },
-      python = { "pyright" }
-    }
-
-    vim.api.nvim_create_autocmd("FileType", {
-      callback = function(args)
-        local fts = ft_to_lsp[vim.bo[args.buf].filetype]
-        if fts then
-          for _, lsp in ipairs(fts) do
-            lspconfig[lsp].setup(default_config) -- 全部使用统一配置
-          end
-        end
-      end
-    })
-
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-    capabilities.textDocument.completion.completionItem.resolveSupport = {
-      properties = { "documentation", "detail", "additionalTextEdits" }
-    }
-   end
+      local capabilities = cmp_nvim_lsp.default_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      capabilities.textDocument.completion.completionItem.resolveSupport = {
+        properties = { "documentation", "detail", "additionalTextEdits" }
+      }
+    end
   }

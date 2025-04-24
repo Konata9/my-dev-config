@@ -1,18 +1,4 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    cmd = "Mason",
-    opts = {
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗"
-        }
-      }
-    },
-  },
-  {
     "williamboman/mason-lspconfig.nvim",
     dependencies = "williamboman/mason.nvim",
     opts = {
@@ -24,7 +10,7 @@ return {
         "rust_analyzer", -- Rust
         "ts_ls",      -- TypeScript/JavaScript
         "eslint",
-        "gopls",         -- Go
+        -- "gopls",         -- Go
         "jsonls",        -- JSON
         "yamlls",        -- YAML
         "marksman",      -- Markdown
@@ -34,5 +20,4 @@ return {
         "black"          -- Formatting
       }
     }
-  },
-}
+  }
