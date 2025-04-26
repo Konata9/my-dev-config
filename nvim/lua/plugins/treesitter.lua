@@ -1,5 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
   config = function()
     require("nvim-treesitter.configs").setup({
@@ -22,9 +23,21 @@ return {
         disable = { "markdown" },
       },
       ensure_installed = {
-        "bash", "css", "dockerfile", "go", "html", 
-        "javascript", "json", "lua", "markdown", "python", "rust",
-        "typescript", "vim", "yaml", "toml", "sql"
+        "bash",
+        "css", 
+        "dockerfile", 
+        "html", 
+        "javascript", 
+        "json", 
+        "lua", 
+        "markdown", 
+        "python", 
+        "rust",
+        "typescript", 
+        "vim", 
+        "yaml", 
+        "toml", 
+        "sql"
       },
     })
   end

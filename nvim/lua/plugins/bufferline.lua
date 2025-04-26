@@ -37,11 +37,6 @@ return {
         delay = 200,
         reveal = {'close'}
       },
-      groups = {
-        options = {
-          toggle_hidden_on_enter = true,
-        },
-      },
       custom_areas = { 
         right = function()
           return {
