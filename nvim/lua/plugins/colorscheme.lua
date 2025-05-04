@@ -1,11 +1,11 @@
 return {
-  "catppuccin/nvim", 
-  name = "catppuccin", 
+  "catppuccin/nvim",
+  name = "catppuccin",
   priority = 1000,
   opts = {
-    flavour = "macchiato", 
+    flavour = "macchiato",
     integrations = {
-      bufferline = true, 
+      bufferline = true,
     },
   },
   config = function()
