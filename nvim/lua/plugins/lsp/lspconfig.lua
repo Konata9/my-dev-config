@@ -64,7 +64,8 @@ return {
     end
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
+    -- Disable snippet support if not needed for performance
+    capabilities.textDocument.completion.completionItem.snippetSupport = false
     capabilities.textDocument.completion.completionItem.resolveSupport = {
       properties = { "documentation", "detail", "additionalTextEdits" }
     }
@@ -80,11 +81,13 @@ return {
       md = "marksman",
     }
 
-    vim.api.nvim_create_autocmd("FileType", {
+    vim.api.nvim_create_autocmd("BufReadPost", {
       callback = function(args)
-        local filetype = args.match
+        local filetype = vim.bo[args.buf].filetype
         local lsp_name = filetype_to_lsp[filetype]
-        if lsp_name and lspconfig[lsp_name] then
+
+        if lsp_name then
+          -- Check if LSP is already active
           local clients = vim.lsp.get_active_clients({ bufnr = args.buf })
           local has_lsp = false
           for _, client in ipairs(clients) do
