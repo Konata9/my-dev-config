@@ -2,25 +2,25 @@ return {
   "akinsho/bufferline.nvim",
   version = "*",
   dependencies = {
-    "nvim-tree/nvim-web-devicons", 
-    "famiu/bufdelete.nvim",       
+    "nvim-tree/nvim-web-devicons",
+    "famiu/bufdelete.nvim",
   },
-  event = "VeryLazy",              
-  keys = { 
-    { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },
+  event = "VeryLazy",
+  keys = {
+    { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>",            desc = "Toggle pin" },
     { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned" },
-    { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer" },
-    { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer" },
-    { "[b", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer" },
-    { "]b", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer" },
+    { "<S-h>",      "<cmd>BufferLineCyclePrev<cr>",            desc = "Prev buffer" },
+    { "<S-l>",      "<cmd>BufferLineCycleNext<cr>",            desc = "Next buffer" },
+    { "[b",         "<cmd>BufferLineCyclePrev<cr>",            desc = "Prev buffer" },
+    { "]b",         "<cmd>BufferLineCycleNext<cr>",            desc = "Next buffer" },
   },
   opts = {
     options = {
-      mode = "buffers", 
+      mode = "buffers",
       diagnostics = "nvim_lsp",
-      always_show_bufferline = false, 
+      always_show_bufferline = false,
       offsets = {
-        { 
+        {
           filetype = "neo-tree",
           text = "File Explorer",
           highlight = "Directory",
@@ -35,9 +35,9 @@ return {
       hover = {
         enabled = true,
         delay = 200,
-        reveal = {'close'}
+        reveal = { 'close' }
       },
-      custom_areas = { 
+      custom_areas = {
         right = function()
           return {
             { text = " " },
