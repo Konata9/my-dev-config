@@ -9,7 +9,7 @@ font-size = 15
 font-family = "Maple Mono NF CN"
 
 # Line-height
-adjust-cell-height = 5%
+adjust-cell-height = 10%
 
 # Cursor
 cursor-invert-fg-bg = true
