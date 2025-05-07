@@ -2,8 +2,9 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		opts = {
-			-- Just disable autoformat
-			autoformat = false,
+      diagnostics = {
+        virtual_text = false,
+      },
 		},
 	},
 }
