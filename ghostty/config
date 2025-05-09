@@ -6,6 +6,7 @@ keybind = cmd+r=clear_screen
 
 # Font
 font-size = 15
+font-thicken = true
 font-family = "Maple Mono NF CN"
 
 # Line-height
