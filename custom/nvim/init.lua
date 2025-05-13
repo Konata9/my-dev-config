@@ -40,9 +40,25 @@ vim.o.swapfile = false
 vim.o.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 
 -- Fold setting
-vim.o.foldlevel = 99
-vim.o.foldmethod = 'expr'
-vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
+vim.wo.foldcolumn = "1"
+vim.wo.foldlevel = 99
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+
+vim.opt.foldtext = "v:lua.CustomFoldText()"
+function CustomFoldText()
+  local line = vim.fn.getline(vim.v.foldstart)
+
+  return string.sub(line, 1, 50)  -- Keep 50 chars 
+end
 
 -----------------------------------------------------------------------------------------
 -- Key mappings
