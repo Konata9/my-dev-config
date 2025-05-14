@@ -1,7 +1,8 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  version = false,
   build = ":TSUpdate",  -- Auto-install/update parsers
-  event = { "BufReadPre", "BufNewFile" },  -- Lazy loading
+  event = { "VeryLazy" },  -- Lazy loading
   keys = {
     { "<c-space>", desc = "Increment Selection" },
     { "<bs>", desc = "Decrement Selection", mode = "x" },
@@ -25,10 +26,10 @@ return {
         "printf",
         "python",
         "query",
-        "yaml",          
         "vim",
         "vimdoc",
         "xml",
+        "yaml"
       },
       
       -- Enable syntax highlighting
