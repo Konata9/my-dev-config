@@ -15,5 +15,8 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to upper window' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right window' })
 
+-- save file
+vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+
 -- Lazy.nvim
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Show Lazy.nvim'})
