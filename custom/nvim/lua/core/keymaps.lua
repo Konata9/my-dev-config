@@ -18,5 +18,8 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right window' })
 -- save file
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
+-- new file
+vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
+
 -- Lazy.nvim
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Show Lazy.nvim'})
