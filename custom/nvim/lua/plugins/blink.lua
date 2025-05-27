@@ -1,8 +1,8 @@
 return {
   'saghen/blink.cmp',
-
   dependencies = {
     'rafamadriz/friendly-snippets',
+    'Kaiser-Yang/blink-cmp-avante',
     'Exafunction/codeium.nvim',
   },
   -- use a release tag to download pre-built binaries
@@ -23,7 +23,6 @@ return {
     -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
       preset = 'super-tab',
-
       ['<C-/>'] = { 'show', 'show_documentation', 'hide_documentation' },
       ['<C-k>'] = { 'select_prev', 'fallback' },
       ['<C-j>'] = { 'select_next', 'fallback' },
@@ -31,8 +30,6 @@ return {
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-      -- Adjusts spacing to ensure icons are aligned
-
       nerd_font_variant = 'mono'
     },
 
@@ -40,16 +37,39 @@ return {
     completion = {
       documentation = { auto_show = false }
     },
-
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', 'codeium' },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'codeium', 'avante' },
       providers = {
         codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
+        avante = {
+          module = 'blink-cmp-avante',
+          name = 'Avante',
+          opts = {
+            -- options for blink-cmp-avante
+          },
+          command = {
+            get_kind_name = function(_)
+              return 'AvanteCmd'
+            end
+          },
+          mention = {
+            get_kind_name = function(_)
+              return 'AvanteMention'
+            end
+          },
+          kind_icons = {
+            AvanteCmd = '',
+            AvanteMention = '',
+          }
+        }
       },
     },
 
+    cmdline = {
+      enabled = false,
+    },
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
     -- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
     -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
