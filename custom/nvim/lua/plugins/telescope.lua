@@ -2,6 +2,9 @@ return {
   "nvim-telescope/telescope.nvim",
   tag = "0.1.8",
   event = "VeryLazy",
+  cmd = {
+    "Telescope",
+  },
   dependencies = {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-live-grep-args.nvim", version = "v2.4.0" }

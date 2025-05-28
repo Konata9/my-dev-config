@@ -1,12 +1,12 @@
 return {
   {
     "akinsho/bufferline.nvim",
-    version = "v4.*",  
+    version = "v4.*",
     dependencies = {
-      "nvim-tree/nvim-web-devicons",  
+      "nvim-tree/nvim-web-devicons",
       "moll/vim-bbye"
     },
-    event = "BufReadPost",  
+    event = "BufReadPost",
     keys = {
       {
         "<leader>bb",
@@ -29,17 +29,17 @@ return {
         desc = "Next buffer",
       },
     },
-    opts = {  
+    opts = {
       options = {
-        mode = "buffers",  
-        separator_style = "slant",  
-        always_show_bufferline = false,  
+        mode = "buffers",
+        separator_style = "slant",
+        always_show_bufferline = false,
         show_buffer_close_icons = true,
-        show_close_icon = false, 
-        color_icons = true,       
-        enforce_regular_tabs = false, 
+        show_close_icon = false,
+        color_icons = true,
+        enforce_regular_tabs = false,
         diagnostics_throttle = 500,
-        offsets = {  
+        offsets = {
           {
             filetype = "neo-tree",
             text = "File Explorer",
@@ -47,10 +47,10 @@ return {
             separator = true,
           }
         },
-        hover = { 
+        hover = {
           enabled = true,
           delay = 200,
-          reveal = {'close'}
+          reveal = { 'close' }
         },
       }
     },
