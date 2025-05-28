@@ -49,10 +49,10 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      { "mason-org/mason.nvim" },
-      { "mason-org/mason-lspconfig.nvim" },
-      { "saghen/blink.cmp" },
-      { "folke/lazydev.nvim",            opts = {} }
+      "mason-org/mason.nvim",
+      "mason-org/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
+      { "folke/lazydev.nvim", ots = {} }
     },
     config = function()
       require("mason").setup({
@@ -90,8 +90,6 @@ return {
       })
 
       local lspconfig = require("lspconfig")
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
-
       -- Force let the typescript-tools to do LSP for js/ts
       require("lspconfig.util").on_setup = function(config)
         if config.name == "tsserver" then return false end
@@ -116,7 +114,6 @@ return {
 
       -- Language specific config
       lspconfig.lua_ls.setup({
-        capabilities = capabilities,
         settings = {
           Lua = {
             diagnostics = {

@@ -48,6 +48,7 @@ return {
     "echasnovski/mini.pick",         -- for file_selector provider mini.pick
     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
     "nvim-tree/nvim-web-devicons",   -- or echasnovski/mini.icons
+    "hrsh7th/nvim-cmp",
     {
       -- Make sure to set this up properly if you have lazy=true
       'MeanderingProgrammer/render-markdown.nvim',
