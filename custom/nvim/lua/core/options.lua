@@ -2,33 +2,33 @@
 vim.g.encoding = "UTF-8"
 vim.opt.fileencoding = 'utf-8'
 
-vim.opt.number = true          -- Show line numbers
-vim.opt.relativenumber = true  -- Relative line numbers
+vim.opt.number = true         -- Show line numbers
+vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.ruler = false
 
-vim.opt.tabstop = 2            -- Tab character width
-vim.opt.shiftwidth = 2         -- Auto-indent width 
-vim.opt.expandtab = true       -- Convert tabs to spaces
-vim.opt.mouse = 'a'            -- Enable mouse support
+vim.opt.tabstop = 2      -- Tab character width
+vim.opt.shiftwidth = 2   -- Auto-indent width
+vim.opt.expandtab = true -- Convert tabs to spaces
+vim.opt.mouse = 'a'      -- Enable mouse support
 
 -- Search settings
-vim.opt.ignorecase = true      -- Case insensitive search
-vim.opt.smartcase = true       -- Smart case (case-sensitive when uppercase present)
+vim.opt.ignorecase = true -- Case insensitive search
+vim.opt.smartcase = true  -- Smart case (case-sensitive when uppercase present)
 
 -- UI settings
-vim.opt.termguicolors = true   -- Enable true color support
-vim.opt.cursorline = true      -- Highlight current line
-vim.opt.signcolumn = 'yes'     -- Always show sign column (for diagnostics etc)
+vim.opt.termguicolors = true -- Enable true color support
+vim.opt.cursorline = true    -- Highlight current line
+vim.opt.signcolumn = 'yes'   -- Always show sign column (for diagnostics etc)
 
 -- Show invisible chars (space as dot)
 vim.opt.list = true
 vim.opt.listchars = "space:·"
 
 -- Text wrapping
-vim.opt.wrap = true           -- Enable line wrapping
-vim.opt.linebreak = true      -- Wrap at word boundaries (not mid-word)
-vim.opt.breakindent = true    -- Maintain indentation in wrapped lines
-vim.opt.showbreak = '↳ '      -- Custom prefix for wrapped lines (optional)
+vim.opt.wrap = true -- Enable line wrapping
+vim.opt.linebreak = true -- Wrap at word boundaries (not mid-word)
+vim.opt.breakindent = true -- Maintain indentation in wrapped lines
+vim.opt.showbreak = '↳ ' -- Custom prefix for wrapped lines (optional)
 
 -- Disable backup files
 vim.opt.backup = false
@@ -39,7 +39,7 @@ vim.opt.swapfile = false
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 
 vim.opt.shiftround = true -- Round indent
-vim.opt.shiftwidth = 2 -- Size of an indent
+vim.opt.shiftwidth = 2    -- Size of an indent
 vim.opt.smartindent = true
 
 vim.opt.laststatus = 3 -- global statusline
@@ -63,5 +63,15 @@ vim.opt.foldtext = "v:lua.CustomFoldText()"
 function CustomFoldText()
   local line = vim.fn.getline(vim.v.foldstart)
 
-  return string.sub(line, 1, 50)  -- Keep 50 chars 
+  return string.sub(line, 1, 50) -- Keep 50 chars
+end
+
+-- Neovide clipboard
+if vim.g.neovide then
+  vim.keymap.set('n', '<D-s>', ':w<CR>') -- Save
+  vim.keymap.set('v', '<D-c>', '"+y')    -- Copy
+  vim.keymap.set('n', '<D-v>', '"+P')    -- Paste normal mode
+  vim.keymap.set('v', '<D-v>', '"+P')    -- Paste visual mode
+  vim.keymap.set('c', '<D-v>', '<C-R>+') -- Paste command mode
+  vim.keymap.set('i', '<D-v>', '<C-R>+') -- Paste insert mode
 end
