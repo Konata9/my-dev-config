@@ -49,11 +49,11 @@ return {
   },
   opts = { -- Recommended over config()
     close_if_last_window = true,
-    popup_border_style = "NC",
     sources = { "filesystem", "buffers", "git_status" },
     open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
     window = {
       position = "left",
+      popup_border_style = "single",
       mapping_options = {
         noremap = true,
         nowait = true,
