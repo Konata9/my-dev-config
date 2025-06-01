@@ -38,5 +38,6 @@ return {
   config = function()
     -- load the colorscheme here
     vim.cmd([[colorscheme catppuccin-macchiato]])
+    vim.cmd("highlight WinSeparator guifg=#6E738D gui=NONE")
   end
 }

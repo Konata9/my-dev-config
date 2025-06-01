@@ -8,6 +8,8 @@ vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = 'Split window vertical
 -- Additional useful window mappings (optional)
 vim.keymap.set('n', '<leader>wd', ':close<CR>', { desc = 'Close current window' })
 vim.keymap.set('n', '<leader>w=', '<C-w>=', { desc = 'Equalize window sizes' })
+vim.keymap.set("n", "<leader>w8", ":vertical resize +80<CR>", { desc = "Resize window size 80" })
+vim.keymap.set("n", "<leader>w2", ":vertical resize +20<CR>", { desc = "Increase window size 20" })
 
 -- Add to your keymaps.lua or similar configuration file
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left window' })
