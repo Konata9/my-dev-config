@@ -35,6 +35,9 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
 
+vim.opt.title = true
+vim.opt.titlestring = vim.fs.basename(vim.fn.getcwd())
+
 -- Share clipboard
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 
