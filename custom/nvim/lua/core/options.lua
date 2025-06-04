@@ -71,6 +71,8 @@ end
 
 -- Neovide clipboard
 if vim.g.neovide then
+  vim.o.guifont = "Maple Mono NF CN:h14"
+
   vim.keymap.set('n', '<D-s>', ':w<CR>') -- Save
   vim.keymap.set('v', '<D-c>', '"+y')    -- Copy
   vim.keymap.set('n', '<D-v>', '"+P')    -- Paste normal mode
