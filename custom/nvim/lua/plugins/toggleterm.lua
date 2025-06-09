@@ -3,6 +3,6 @@ return {
   version = "*",
   event = "VeryLazy",
   opts = {
-    open_mapping = [[<c-/>]],
+    open_mapping = [[<c-\>]],
   }
 }
