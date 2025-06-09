@@ -21,17 +21,17 @@ return {
       {
         "<leader>bl",
         "<cmd>BufferLineCloseLeft<cr>",
-        desc = "Close buffer",
+        desc = "Close buffer left",
       },
 {
         "<leader>br",
         "<cmd>BufferLineCloseRight<cr>",
-        desc = "Close buffer",
+        desc = "Close buffer right",
       },
 {
         "<leader>bo",
         "<cmd>BufferLineCloseOthers<cr>",
-        desc = "Close buffer",
+        desc = "Close other buffer",
       },
 
       {
