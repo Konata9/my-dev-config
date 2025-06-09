@@ -31,7 +31,7 @@ return {
   end,
   keys = {                                                                  -- Immediate load on keypress
     { "<leader>e", "<cmd>Neotree toggle<cr>",       desc = "Explorer (Neo-tree)" },
-    { "<leader>b", "<cmd>Neotree show buffers<cr>", desc = "Buffer list" }, -- Buffer list
+    { "<leader>be", "<cmd>Neotree show buffers<cr>", desc = "Buffer list" }, -- Buffer list
     {
       "<leader>ge",
       function()

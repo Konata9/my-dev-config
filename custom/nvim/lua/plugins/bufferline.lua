@@ -19,6 +19,22 @@ return {
         desc = "Close buffer",
       },
       {
+        "<leader>bl",
+        "<cmd>BufferLineCloseLeft<cr>",
+        desc = "Close buffer",
+      },
+{
+        "<leader>br",
+        "<cmd>BufferLineCloseRight<cr>",
+        desc = "Close buffer",
+      },
+{
+        "<leader>bo",
+        "<cmd>BufferLineCloseOthers<cr>",
+        desc = "Close buffer",
+      },
+
+      {
         "[b",
         "<cmd>BufferLineCyclePrev<cr>",
         desc = "Previous buffer",
