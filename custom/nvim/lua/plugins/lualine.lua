@@ -1,7 +1,7 @@
 return {
   "nvim-lualine/lualine.nvim",
   event = "BufReadPost",
-  dependencies = { 
+  dependencies = {
     "nvim-tree/nvim-web-devicons",
     {
       "lewis6991/gitsigns.nvim",
@@ -16,7 +16,7 @@ return {
     options = {
       theme = "auto",
       component_separators = "|",
-      section_separators = { left = "", right = "" }
+      section_separators = { lrft = "", right = "" }
     },
     sections = {
       lualine_a = { "mode" },
@@ -27,21 +27,21 @@ return {
           color = { gui = "bold" }
         },
       },
-      lualine_c = { 
+      lualine_c = {
         {
           "filename",
-          path = 1,  
+          path = 1,
           symbols = {
-            modified = "[+]",  -- Modified
-            readonly = "[-]",  -- Readonly 
-            unnamed = "[No Name]"  -- Buffer
+            modified = "[+]",     -- Modified
+            readonly = "[-]",     -- Readonly
+            unnamed = "[No Name]" -- Buffer
           }
         }
       },
-      lualine_x = { "filetype",},
+      lualine_x = { "filetype", },
       lualine_y = { "progress" },
-      lualine_z = { "%3l:%-2c" }  -- line:column
+      lualine_z = { "%3l:%-2c" } -- line:column
     },
-    extensions = {"neo-tree"}
+    extensions = { "neo-tree" }
   }
 }

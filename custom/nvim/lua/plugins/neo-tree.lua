@@ -29,8 +29,8 @@ return {
   deactivate = function()
     vim.cmd([[Neotree close]])
   end,
-  keys = {                                                                  -- Immediate load on keypress
-    { "<leader>e", "<cmd>Neotree toggle<cr>",       desc = "Explorer (Neo-tree)" },
+  keys = {                                                                   -- Immediate load on keypress
+    { "<leader>e",  "<cmd>Neotree toggle<cr>",       desc = "Explorer (Neo-tree)" },
     { "<leader>be", "<cmd>Neotree show buffers<cr>", desc = "Buffer list" }, -- Buffer list
     {
       "<leader>ge",
@@ -49,10 +49,12 @@ return {
   },
   opts = { -- Recommended over config()
     close_if_last_window = true,
+    popup_border_style = "winborder",
     sources = { "filesystem", "buffers", "git_status" },
     open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
     window = {
       position = "left",
+      width = 30,
       popup_border_style = "single",
       mapping_options = {
         noremap = true,
@@ -60,8 +62,8 @@ return {
       },
       mappings = {
         ["<space>"] = "none",
-      }
-    },
+      },
+   },
     filesystem = {
       bind_to_cwd = false,
       follow_current_file = { enabled = true },

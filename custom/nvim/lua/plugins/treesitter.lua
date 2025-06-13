@@ -1,11 +1,11 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   version = false,
-  build = ":TSUpdate",  -- Auto-install/update parsers
-  event = { "VeryLazy" },  -- Lazy loading
+  build = ":TSUpdate",    -- Auto-install/update parsers
+  event = { "VeryLazy" }, -- Lazy loading
   keys = {
     { "<c-space>", desc = "Increment Selection" },
-    { "<bs>", desc = "Decrement Selection", mode = "x" },
+    { "<bs>",      desc = "Decrement Selection", mode = "x" },
   },
   config = function()
     require("nvim-treesitter.configs").setup({
@@ -13,12 +13,12 @@ return {
       ensure_installed = {
         "bash",
         "diff",
-        "html", 
-        "lua", 
+        "html",
+        "lua",
         "dockerfile",
-        "javascript", 
+        "javascript",
         "jsdoc",
-        "json", 
+        "json",
         "typescript",
         "tsx",
         "markdown",
@@ -31,11 +31,11 @@ return {
         "xml",
         "yaml"
       },
-      
+
       -- Enable syntax highlighting
       highlight = {
         enable = true,
-        additional_vim_regex_highlighting = false  -- Avoid conflicts
+        additional_vim_regex_highlighting = false -- Avoid conflicts
       },
 
       -- Enable smart indentation (required for indent-blankline)

@@ -17,6 +17,7 @@ vim.opt.smartcase = true  -- Smart case (case-sensitive when uppercase present)
 
 -- UI settings
 vim.opt.termguicolors = true -- Enable true color support
+-- vim.opt.cursorcolumn = true -- Highlight current column
 vim.opt.cursorline = true    -- Highlight current line
 vim.opt.signcolumn = 'yes'   -- Always show sign column (for diagnostics etc)
 
